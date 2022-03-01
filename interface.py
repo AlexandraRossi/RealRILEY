@@ -1,29 +1,48 @@
-import random
 import sys
-import PyQt5
-from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QPushButton, QAction, QLineEdit, QMessageBox
+from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import pyqtSlot
 
-class MyWidget(QtWidgets.QWidget):
+from FunctionFile import InputFunction, StringSplitter
 
+
+class App(QMainWindow):
 
     def __init__(self):
         super().__init__()
+        self.title = 'RILEY'
+        self.left = 1000
+        self.top = 500
+        self.width = 400
+        self.height = 140
+        self.initUI()
 
-        self.hello = ["Hallo Welt", "Hei maailma", "Hola Mundo", "Привет мир"]
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
 
-        self.button = QtWidgets.QPushButton("Click me!")
-        self.text = QtWidgets.QLabel("Hello World",
-                                     alignment=QtCore.Qt.AlignCenter)
+        # Create textbox
+        self.textbox = QLineEdit(self)
+        self.textbox.move(10, 20)
+        self.textbox.resize(280, 40)
 
-        self.layout = QtWidgets.QVBoxLayout(self)
-        self.layout.addWidget(self.text)
-        self.layout.addWidget(self.button)
+        # Create a button in the window
+        self.button = QPushButton('Show text', self)
+        self.button.move(20, 80)
 
-if __name__ == "__main__":
-    app = QtWidgets.QApplication([])
+        # connect button to function on_click
+        self.button.clicked.connect(self.on_click)
+        self.show()
 
-    widget = MyWidget()
-    widget.resize(800, 600)
-    widget.show()
+    def on_click(self):
+        TextBoxValue = self.textbox.text()
+        InputFunction(TextBoxValue)
+        StringSplitter(TextBoxValue)
+        QMessageBox.question(self, 'RILEY confirmation', "You typed: " + textboxValue, QMessageBox.Ok)
+        self.textbox.setText("")
 
-    sys.exit(app.exec())
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = App()
+    sys.exit(app.exec_())
