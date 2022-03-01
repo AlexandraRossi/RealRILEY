@@ -38,7 +38,7 @@ class App(QMainWindow):
         TextBoxValue = self.textbox.text()
         InputFunction(TextBoxValue)
         StringSplitter(TextBoxValue)
-        QMessageBox.question(self, 'RILEY confirmation', "You typed: " + textboxValue, QMessageBox.Ok)
+        QMessageBox.question(self, 'RILEY confirmation', "You typed: " + TextBoxValueextboxValue, QMessageBox.Ok)
         self.textbox.setText("")
 
 
