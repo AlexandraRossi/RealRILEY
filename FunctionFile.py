@@ -8,4 +8,9 @@ def InputFunction(TextBoxValue = None):
 def StringSplitter(TextBoxValue = None):
     TextBoxValue
 
+#word inserter into SQL spreadsheet
+def Language_Spreadsheet():
+
 #Lemmatizer for each individual word
+def Lemmatizer():
+
