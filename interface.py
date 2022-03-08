@@ -40,7 +40,7 @@ class App(QMainWindow):
         StringSplitter(TextBoxValue)
         QMessageBox.question(self, 'RILEY confirmation', "You typed: " + TextBoxValueextboxValue, QMessageBox.Ok)
         self.textbox.setText("")
-
+#response n input/learning personality section, to be fed through from the RILEY file
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
