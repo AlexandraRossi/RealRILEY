@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QPushButton, QAc
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
 
-from FunctionFile import InputFunction, StringSplitter
+from FunctionFile import InputFunction, StringSplitter, Lemmatizer
 
 
 class App(QMainWindow):
