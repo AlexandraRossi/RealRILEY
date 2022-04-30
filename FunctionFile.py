@@ -13,10 +13,11 @@ def StringSplitter(TextBoxValue = None):
 def Language_Spreadsheet():
     pass
 #Lemmatizer for each individual word
-def Lemmatizer():
+def Lemmatizer(lemmatizer=None):
     print("rocks :", lemmatizer.lemmatize("rocks"))
     print("corpora :", lemmatizer.lemmatize("corpora"))
 
     # a denotes adjective in "pos"
     print("better :", lemmatizer.lemmatize("better", pos="a"))
+
 
